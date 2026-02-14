@@ -28,6 +28,7 @@
 
 ### Результат
 
+![Screenshot](https://github.com/user-attachments/assets/dbd38cc6-aed8-48a4-9e7e-134f67ed7427)
 
 
 
