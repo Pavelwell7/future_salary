@@ -23,8 +23,6 @@
 
 Доступны следующие переменные окружения:
 
-- `HH_URL` - адрес сайта HeadHunter
-- `SJ_URL` - адрес сайта SuperJob
 - `TOKEN_SJ` - секретный ключ сайта SuperJob. Для его получения перейдите по ссылке [SuperJob](https://api.superjob.ru/) и зарегистрируйте приложение. 
 
 ## Функции проекта
@@ -37,6 +35,7 @@
 ### Результат
 
 ![Screenshot](https://github.com/user-attachments/assets/dbd38cc6-aed8-48a4-9e7e-134f67ed7427)
+
 
 
 
