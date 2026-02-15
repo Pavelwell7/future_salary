@@ -29,6 +29,7 @@
 
 ## Функции проекта
 
+- `predict_rub_salary` - вспомогательная функция для подсчёта примерной зарплаты
 - `predict_rub_salary_hh` и `predict_rub_salary_sj` - возвращают примерную зарплату из каждой вакансии
 - `get_language_statistic_hh` и `get_language_statistic_sj` - возвращают статистику для каждого языка программирования
 - `main` - основная функция проекта, которая выводит красивую таблицу данных;
@@ -36,6 +37,7 @@
 ### Результат
 
 ![Screenshot](https://github.com/user-attachments/assets/dbd38cc6-aed8-48a4-9e7e-134f67ed7427)
+
 
 
 
