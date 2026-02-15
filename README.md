@@ -7,7 +7,10 @@
 Для запуска программы у вас уже должен быть установлен Python 3.
 
 - Скачайте код
-- Установите зависимости командой `pip install -r requirements.txt`
+- Установите зависимости командой
+  ```
+  pip install -r requirements.txt
+  ```
 - Запустите программу командой `python3 main.py `
 
 ## Переменные окружения
@@ -29,6 +32,7 @@
 ### Результат
 
 ![Screenshot](https://github.com/user-attachments/assets/dbd38cc6-aed8-48a4-9e7e-134f67ed7427)
+
 
 
 
