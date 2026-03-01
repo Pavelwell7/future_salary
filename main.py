@@ -1,7 +1,7 @@
-import requests
 from itertools import count
 
 from environs import Env
+import requests
 from terminaltables import AsciiTable
 
 
@@ -115,45 +115,51 @@ def get_language_statistic_sj(language, token):
         'average_salary': average_salary,
     }
 
-def print_statistics_table(title, stats_function):
-    languages = [
-        'Python',
-        'SQL',
-        'javascript',
-        'java',
-        'php',
-        'c#',
-        'c',
-        'c++',
-        'go',
-    ]
-    table = [[
+
+def get_statistics(languages, stats_function):
+    results = []
+    for lang in languages:
+        stats = stats_function(lang)
+        results.append((lang, stats))
+    return results
+
+
+def make_table(title, languages_statistics):
+    table_data = [[
         'Язык программирования',
         'Вакансий найдено',
         'Вакансий обработано',
         'Средняя зарплата'
     ]]
-    for lang in languages:
-        stats = stats_function(lang)
-        table.append([
-            lang,
+
+    for language, stats in languages_statistics:
+        table_data.append([
+            language,
             stats['vacancies_found'],
             stats['vacancies_processed'],
             stats['average_salary'],
         ])
-    ascii_table = AsciiTable(table)
+
+    ascii_table = AsciiTable(table_data)
     ascii_table.title = title
-    print(ascii_table.table)
+    return ascii_table.table
+
 
 def main():
-
     env = Env()
     env.read_env()
-
     token_sj = env('TOKEN_SJ')
 
-    print_statistics_table('HeadHunter Moscow',  get_language_statistic_hh)
-    print_statistics_table('SuperJob Moscow', lambda lang: get_language_statistic_sj(lang, token_sj))
+    languages = [
+        'Python', 'SQL', 'javascript', 'java',
+        'php', 'c#', 'c', 'c++', 'go',
+    ]
+
+    hh_languages = get_statistics(languages, get_language_statistic_hh)
+    print(make_table('HeadHunter Moscow', hh_languages))
+
+    sj_languages = get_statistics(languages, lambda lang: get_language_statistic_sj(lang, token_sj))
+    print(make_table('SuperJob Moscow', sj_languages))
 
 
 if __name__ == '__main__':
